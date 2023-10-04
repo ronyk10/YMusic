@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Roboto:wght@300&display=swap');
+
 /* Réinitialisation des marges et des rembourrages pour le corps et le conteneur */
 body,
 html {
@@ -10,6 +12,7 @@ html {
     /* Si vous souhaitez que l'image reste fixe pendant le défilement */
     background-position: center;
     /* Centrez l'image de fond */
+    font-family: 'Audiowide', 'Roboto', sans-serif;
 }
 
 a {
@@ -91,7 +94,7 @@ a {
 
 .popup {
     width: 200px;
-    height: 350px;
+    height: 400px;
     background: white;
     border-radius: 15px;
     margin: 6rem auto;
