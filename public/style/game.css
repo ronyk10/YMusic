@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Roboto:wght@300&display=swap');
+body,
+html {
+    margin: 0;
+    padding: 0;
+    background-image: url('/public/images/background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+.top-page-game{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container-life{
+    width: 350px;
+    height: 40px;
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.325);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ymusic{
+    height: 120px;
+    width: 300px;
+}
+
+.life{
+    font-family: 'audiowide';
+}
+
+.vinyle{
+    height: 30px;
+    width: 30px;
+}
+
+.advice{
+    font-family: 'audiowide';
+    font-size: 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+.sound{
+    height: 30px;
+    width: 30px;
+}
+.middle-page-game{
+    font-size: 25px;
+    font-family: 'audiowide';
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* justify-content: space-evenly; */
+    /* flex-direction: column; */
+}
+
+.character-image{
+    height: 120px;
+    width: 90px;
+    margin-left: 10px;
+}
+
+.all-the-game{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#word-display{
+    font-size: 25px;
+    font-family: 'audiowide';
+}
+
+#guess-input{
+    height: 40px;
+    width: 300px;
+    border-radius: 50px;
+    border: none;
+    padding-left: 15px;
+    font-family: 'audiowide';
+    background-color: rgba(255, 255, 255, 0.325);
+}
+.input-guessing{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white; 
+}
+input::placeholder{
+    color: white;
+    font-family: 'audiowide';
+}
+
+#guess-button{
+    border-radius: 50px;
+    height: 40px;
+    border: none;
+    padding-left: 10px;
+    font-family: 'audiowide';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.325);
+    color: white;
+}
+#guess-button:hover{
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+}
+
+#letters-guessed{
+    color: white;
+    font-family: 'audiowide';
+    font-size: 20px;
+}
+.bottom-page-game{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    font-family: 'audiowide';
+}
+.left-part{
+    display: flex;
+    align-items: center;
+}
+.return{
+    height: 30px;
+    width: 30px;
+}
+.left-part:hover{
+    cursor: pointer;
+}
+
+.jukebox{
+    height: 80px;
+    width: 80px;
+}
+
