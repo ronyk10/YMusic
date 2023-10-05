@@ -98,6 +98,7 @@ function create ()
         setXY: { x: 50, y: 0, stepX: 98 }
     });
 
+
     boxes.children.iterate(function (child, index) {
         child.setBounceY(Phaser.Math.FloatBetween(0.2, 0.3));
         child.setInteractive(); // Permet la détection d'interaction
@@ -120,6 +121,7 @@ function create ()
     this.physics.add.collider(player, platforms);
     // Ajoutez une collision entre les boîtes et les plateformes
     this.physics.add.collider(boxes, platforms);
+
 }
 
 function update ()
