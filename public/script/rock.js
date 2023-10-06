@@ -1,5 +1,5 @@
 var audioElement = new Audio();
-var rockSounds = ["50Cent_In-Da-Club.mp3", "50Cent_In-Da-Club.mp3"];
+var rockSounds = ["Billie Jean.mp3", "Jailhouse Rock.mp3","Rock Around The Clock.mp3","Roll Over Beethoven.mp3","Smells Like Teen Spirit.mp3","T.N.T..mp3"];
 var currentSongTitle = rockSounds[Math.floor(Math.random() * rockSounds.length)].replace(".mp3", "");
 var currentLife = 5;
 var penduArray = [];
@@ -15,6 +15,25 @@ function playRandomSoundRap() {
     updateCurrentSongTitleElement();
     updateLifeElement();
 }
+
+// function resetGame() {
+//     // Réinitialisez toutes les variables du jeu
+//     currentSongTitle = rockSounds[Math.floor(Math.random() * rockSounds.length)].replace(".mp3", "");
+//     currentLife = 5;
+//     penduArray = [];
+//     testedLetters = [];
+
+//     // Réinitialisez les éléments HTML
+//     updateCurrentSongTitleElement();
+//     updateLifeElement();
+//     updateTestedLettersElement();
+
+//     // Fermez la popup si elle est ouverte
+//     closePopupFunc();
+
+//     // Lancez une nouvelle partie
+//     playRandomSoundRap();
+// }
 console.log(currentSongTitle)
 
 function compareInput() {
@@ -27,7 +46,10 @@ function compareInput() {
         document.getElementById("userInput").value = "";
         return; // Sortez de la fonction si la lettre a déjà été testée
     }else if(checkword(userInput)){
+        audioElement.pause();
        openPopupWin();
+
+       return;
     }
     console.log(currentSongTitle , userInput)
     testedLetters.push(userInput); // Ajoutez la lettre testée au tableau
@@ -51,10 +73,11 @@ function compareInput() {
     document.getElementById("userInput").value = "";
 
     // Vérification de la fin du jeu
-    if (penduArray.indexOf("_") === -1) {
+    if (penduArray.indexOf("_") === 0) {
         console.log("Félicitations, vous avez deviné le titre de la chanson !");
         audioElement.pause();
         openPopupWin();
+        return;
     
     }
 
@@ -63,6 +86,7 @@ function compareInput() {
         console.log("Vous avez perdu, le titre de la chanson était : " + currentSongTitle);
         audioElement.pause();
         openPopupLoser();
+        return;
 
     }
 
@@ -79,7 +103,7 @@ function checkword(userInput){
 
 function updateCurrentSongTitleElement() {
     var currentSongTitleElement = document.getElementById("currentSongTitle");
-    currentSongTitleElement.textContent = "Titre en cours : " + penduArray.join("");
+    currentSongTitleElement.textContent = "" + penduArray.join("");
 }
 
 function updateLifeElement() {

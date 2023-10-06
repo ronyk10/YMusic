@@ -24,7 +24,7 @@ app.get('/game', (req, res) => {
 
 app.get('/rapus', (req, res) => {
 
-    res.sendFile(__dirname + '/public/template/rapus.html');
+    res.sendFile(__dirname + '/public/template/rap-us.html');
 });
 
 app.get('/electro', (req, res) => {
@@ -39,7 +39,7 @@ app.get('/drill', (req, res) => {
 
 app.get('/rock', (req, res) => {
 
-    res.sendFile(__dirname + '/public/templates/rock.html');
+    res.sendFile(__dirname + '/public/template/rock.html');
 });
 
 app.get('/douceur', (req, res) => {

@@ -44,21 +44,23 @@
                 <img src="/images/character.png" alt="character" class="character-image">&nbsp; &nbsp; &nbsp;
             </div>
             <div class="all-the-game">
-                <button id="playRandomRap">PLAY SONG</button>
+                
                 <div class="instructions-guessing">
-                    Try to guess the title
+                    Try to guess the title 
                 </div>
                 <br>
                 <div class="attempts-left" id="lives">
                     You have &nbsp;<span id="currentLife">5</span>&nbsp; attempts left
                 </div>
                 <br>
+                <button id="playRandomRap">PLAY A SONG</button>
+                <br>
                 <div id="currentSongTitle"></div>
                 <br>
                 <div class="input-guessing">
-                    <input type="text" id="userInput" placeholder="Let's guessing ! ">&nbsp;
+                    <input type="text" id="userInput" placeholder="LET'S GUESSING ! ">&nbsp;
                     <!-- <img src="/public/images/vinyl.png" class="vinyle-guessing"> -->
-                    <button id="userInputcheck">submit</button>
+                    <button id="userInputcheck">SUBMIT</button>
                 </div>
             </div>
             <br>
@@ -87,6 +89,38 @@
             </div>
         </div>
         <!--------------------------------------------------------- E N D - B O T T O M -------------------------------------------------->
+     <!--------------------------------------------------------- P O P U P  W I N -------------------------------------------------->
+     <div class="popup-container" id="popup-winner">
+        <div class="popup" id="popup">
+            <a href="#" class="cross" onclick="closePopupFunc()" id="cross-close-popup">&times;</a>
+            <p id="sizeUp">
+                W I N N E R !!!<br>
+            </p>
+            <p>
+                please click on the controller to continue.
+            </p>
+            <div class="img-container">
+                <img src="/images/controller-win.png" alt="">
+            </div>
+        </div>
+    </div>
+    <!--------------------------------------------------------- E N D - P O P U P  W I N -------------------------------------------------->
+    <!--------------------------------------------------------- P O P U P  G A M E  O V E R -------------------------------------------------->
+    <div class="popup-container" id="popup-loser">
+        <div class="popup" id="popup">
+            <a href="#" class="cross" onclick="closePopupFunc()">&times;</a>
+            <p id="sizeUp">
+                You are a L O S E R !!!<br>
+            </p>
+            <p>
+                please click on the controller to go back in the menu.
+            </p>
+            <div class="img-container">
+                <img src="/images/game-over-controller.png" alt="">
+            </div>
+        </div>
+    </div>
+    <!--------------------------------------------------------- E N D - P O P U P  G A M E  O V E R -------------------------------------------------->
     </div>
     <!-- <script src="/public/script/game.js"></script> -->
     <script src="/script/pop.js"></script>

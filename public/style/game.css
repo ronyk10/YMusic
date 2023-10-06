@@ -9,6 +9,10 @@ html {
     background-attachment: fixed;
     background-position: center;
 }
+a{
+    text-decoration: none;
+    color: white;
+}
 .top-page-game{
     display: flex;
     align-items: center;

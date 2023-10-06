@@ -1,12 +1,12 @@
 var audioElement = new Audio();
-var rapSounds = ["50Cent_In-Da-Club.mp3", "50Cent_In-Da-Club.mp3"];
-var currentSongTitle = rapSounds[Math.floor(Math.random() * rapSounds.length)].replace(".mp3", "");
+var drillSound = ["Loading.mp3", "Raspoutine.mp3","Starlight.mp3","Drill FR 4.mp3","For The Night.mp3"];
+var currentSongTitle = drillSound[Math.floor(Math.random() * drillSound.length)].replace(".mp3", "");
 var currentLife = 5;
 var penduArray = [];
 var testedLetters = []; // Ajoutez un tableau pour stocker les lettres testées
 
 function playRandomSoundRap() {
-    var soundFile = "/American/" + currentSongTitle + ".mp3";
+    var soundFile = "/audio/drill/" + currentSongTitle + ".mp3";
     console.log(soundFile);
     audioElement.src = soundFile;
     audioElement.play();
@@ -27,6 +27,7 @@ function compareInput() {
         document.getElementById("userInput").value = "";
         return; // Sortez de la fonction si la lettre a déjà été testée
     }else if(checkword(userInput)){
+        audioElement.pause();
        openPopupWin();
     }
     console.log(currentSongTitle , userInput)
@@ -79,7 +80,7 @@ function checkword(userInput){
 
 function updateCurrentSongTitleElement() {
     var currentSongTitleElement = document.getElementById("currentSongTitle");
-    currentSongTitleElement.textContent = "Titre en cours : " + penduArray.join("");
+    currentSongTitleElement.textContent = "" + penduArray.join("");
 }
 
 function updateLifeElement() {
