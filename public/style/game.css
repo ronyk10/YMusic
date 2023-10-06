@@ -3,7 +3,7 @@ body,
 html {
     margin: 0;
     padding: 0;
-    background-image: url('/public/images/background.png');
+    background-image: url('/images/background.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -72,6 +72,7 @@ html {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-right: 100px;
 }
 
 #word-display{
@@ -79,7 +80,13 @@ html {
     font-family: 'audiowide';
 }
 
-#guess-input{
+.input-guessing{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#userInput{
     height: 40px;
     width: 300px;
     border-radius: 50px;
@@ -88,18 +95,18 @@ html {
     font-family: 'audiowide';
     background-color: rgba(255, 255, 255, 0.325);
 }
-.input-guessing{
+#userInput{
     display: flex;
     justify-content: center;
     align-items: center;
     color: white; 
 }
-input::placeholder{
+#userInput::placeholder{
     color: white;
     font-family: 'audiowide';
 }
 
-#guess-button{
+#userInputcheck{
     border-radius: 50px;
     height: 40px;
     border: none;
@@ -111,7 +118,25 @@ input::placeholder{
     background-color: rgba(255, 255, 255, 0.325);
     color: white;
 }
-#guess-button:hover{
+#userInputcheck:hover{
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+}
+
+#playRandomRap{
+    border-radius: 50px;
+    height: 40px;
+    border: none;
+    padding-left: 10px;
+    font-family: 'audiowide';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.325);
+    color: white;
+}
+
+#playRandomRap:hover{
     background-color: rgba(255, 255, 255, 0.5);
     cursor: pointer;
 }
@@ -145,3 +170,80 @@ input::placeholder{
     width: 80px;
 }
 
+
+
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Roboto:wght@300&display=swap');
+
+#popup-winner{
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    background-color: rgb(0 0 0 / 84%);
+}
+#popup-loser{
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    background-color: rgb(0 0 0 / 84%);
+}
+p {
+    font-family: 'Audiowide', 'Roboto', sans-serif;
+    text-align: center;
+}
+
+#sizeUp {
+    font-size: 20px;
+}
+
+.popup.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.popup {
+    width: 500px;
+    height: 380px;
+    background: white;
+    border-radius: 15px;
+    margin: 6rem auto;
+    padding: 2rem;
+    border-radius: 15px;
+    position: relative;
+    border: 1px solid black;
+}
+
+.popup .cross {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s ease;
+    color: #333;
+}
+
+.img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.img-container img {
+    max-width: 100%;
+    height: auto;
+}

@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Roboto:wght@300&display=swap');
+
+p {
+    font-family: 'Audiowide', 'Roboto', sans-serif;
+    text-align: center;
+}
+
+#sizeUp {
+    font-size: 20px;
+}
+
+.popup.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.popup {
+    width: 500px;
+    height: 380px;
+    background: white;
+    border-radius: 15px;
+    margin: 6rem auto;
+    padding: 2rem;
+    border-radius: 15px;
+    position: relative;
+    border: 1px solid black;
+}
+
+.popup .cross {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s ease;
+    color: #333;
+}
+
+.img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.img-container img {
+    max-width: 100%;
+    height: auto;
+}
