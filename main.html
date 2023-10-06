@@ -34,15 +34,15 @@ var config = {
 
 var player;
 var cursors;
-var platforms; // Groupe pour les plateformes
-var boxes; // Groupe pour les boîtes
-var texts = []; // Tableau pour les textes au-dessus des boîtes
+var platforms;
+var boxes;
+var texts = []; 
 
-var lives = 5; // Nombre de vies initial du joueur
-var livesText; // Texte pour afficher le nombre de vies
-var heartIcons = []; // Tableau pour les icônes de cœur
+var lives = 5;
+var livesText; 
+var heartIcons = []; 
 
-var popup; // Déclaration globale du pop-up pour qu'il puisse être détruit ultérieurement
+var popup;
 
 var game = new Phaser.Game(config);
 
@@ -53,19 +53,19 @@ function preload ()
     this.load.image('boxes', 'assets/Jukebox.png');
     this.load.image('heart', 'assets/vinyl 2.png');
     this.load.image('fond', 'assets/fond.png');
-    // Image de l'icône du cœur
+   
 }
 
 function create ()
 {
     this.add.image(400,400, 'fond');
-    // Crée le joueur
+    
     player = this.physics.add.sprite(100, 450, 'dude');
 
-    // Configuration du joueur
+   
     player.setCollideWorldBounds(true);
 
-    // Crée les animations du joueur
+    
     this.anims.create({
         key: 'left',
         frames: this.anims.generateFrameNumbers('dude', { start: 0, end: 3 }),
@@ -86,14 +86,12 @@ function create ()
         repeat: -1
     });
 
-    // Configuration des curseurs pour le déplacement
+    
     cursors = this.input.keyboard.createCursorKeys();
 
-    // Crée un groupe pour les plateformes
     platforms = this.physics.add.staticGroup();
 
-    // Crée les plateformes à différents niveaux
-    platforms.create(400, 568, 'platform').setScale(2).refreshBody(); // Étage le plus bas
+    platforms.create(400, 568, 'platform').setScale(2).refreshBody(); 
     platforms.create(400, 575, 'platform').setScale(0.5).refreshBody();
     platforms.create(700, 525, 'platform').setScale(0.5).refreshBody();
     platforms.create(100, 475, 'platform').setScale(0.5).refreshBody();
@@ -111,10 +109,10 @@ function create ()
 
     boxes.children.iterate(function (child) {
         child.setBounceY(Phaser.Math.FloatBetween(0.2, 0.3));
-        child.setInteractive(); // Permet la détection d'interaction
+        child.setInteractive();
     });
 
-    // Gestion de l'interaction avec les boîtes
+    
     this.input.on('gameobjectover', function (pointer, gameObject) {
         showPopup(gameObject);
     });
@@ -123,18 +121,18 @@ function create ()
         hidePopup();
     });
 
-    // Crée le texte pour afficher le nombre de vies
+    
     livesText = this.add.text(700, 16, 'Vies: ' + lives, { fontSize: '12px', fill: '#fff' });
 
-    // Crée les icônes de cœur pour représenter les vies
+    
     for (var i = 0; i < lives; i++) {
         var heartIcon = this.add.image(30 + i * 40, 30, 'heart').setDisplaySize(32, 32);
         heartIcons.push(heartIcon);
     }
 
-    // Ajoutez une collision entre le joueur et les plateformes
+   
     this.physics.add.collider(player, platforms);
-    // Ajoutez une collision entre les boîtes et les plateformes
+   
     this.physics.add.collider(boxes, platforms);
 }
 
@@ -156,34 +154,34 @@ function update ()
         player.anims.play('turn');
     }
 
-    // Ajoutez la fonctionnalité de saut
+    
     if (cursors.up.isDown && player.body.touching.down)
     {
-        player.setVelocityY(-450); // Ajustez la valeur de déplacement vertical pour le saut
+        player.setVelocityY(-450); 
     }
 
-    // Mise à jour du texte du nombre de vies
+    
     livesText.setText('Vies: ' + lives);
 }
 
 function showPopup(gameObject) {
-    // Affiche un message pop-up lorsque le joueur est sur une boîte
+   
     var popupText = 'Vous êtes sur une boîte !<br><a href="page.html">Cliquez ici pour jouer</a>';
     var x = gameObject.x - 16;
     var y = gameObject.y - 20;
 
-    // Crée le pop-up avec le texte et le bouton "Jouer"
+   
     popup = game.add.text(x, y, popupText, { fontSize: '12px', fill: '#fff', backgroundColor: '#000' });
 
-    // Détecte le clic sur le bouton "Jouer"
+   
     popup.setInteractive();
     popup.on('pointerdown', function () {
-        window.location.href = "page.html"; // Redirige vers la page.html lorsque le joueur clique sur "Jouer"
+        window.location.href = "page.html"; 
     });
 }
 
 function hidePopup() {
-    // Cache le pop-up
+   
     if (popup) {
         popup.destroy();
     }
