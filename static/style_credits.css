@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Roboto:wght@300&display=swap');
+
 /* Réinitialisation des marges et des rembourrages pour le corps et le conteneur */
 body,
 html {
@@ -10,4 +12,108 @@ html {
     /* Si vous souhaitez que l'image reste fixe pendant le défilement */
     background-position: center;
     /* Centrez l'image de fond */
+    font-family: 'Audiowide', 'Roboto', sans-serif;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-top: 1rem;
+    font-weight: normal;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    /* height: 100%; */
+    width: 100%;
+}
+
+.logo {
+    /* margin-top: 1rem; */
+    width: 15%;
+    height: 15%;
+    /* margin-bottom: 20rem; */
+}
+
+.title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+.text-container {
+    text-align: center;
+}
+
+
+
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    /* Permet aux éléments de passer à la ligne suivante */
+    justify-content: space-between;
+    /* Distribue les éléments de manière égale sur la ligne */
+    margin: 1rem;
+    padding: 3rem;
+}
+
+.box1,
+.box2,
+.box3,
+.box4,
+.box5,
+.box6,
+.box7 {
+    flex: 1;
+    width: 30%;
+    /* Définissez la largeur de chaque boîte pour qu'il y en ait 3 par ligne */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 1rem;
+    border: 1px solid none;
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+
+.box1 img,
+.box4 img,
+.box5 img,
+.box6 img {
+    width: 100%;
+    /* Réduisez la largeur des images à 50% */
+    max-width: 100%;
+    /* Assurez-vous que les images ne dépassent pas la largeur de la boîte parente */
+    height: auto;
+    /* Maintenez le rapport hauteur/largeur d'origine */
+}
+
+.box2 img,
+.box3 img {
+    width: 75%;
+    /* Réduisez la largeur des images à 50% */
+    max-width: 100%;
+    /* Assurez-vous que les images ne dépassent pas la largeur de la boîte parente */
+    height: auto;
+    /* Maintenez le rapport hauteur/largeur d'origine */
 }
