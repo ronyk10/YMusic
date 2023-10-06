@@ -43,7 +43,7 @@ a {
     margin-top: 5rem;
 }
 
-button{
+.play-button{
     width: 200px;
     font-family: 'Audiowide', 'Roboto', sans-serif;
     height: 50px;

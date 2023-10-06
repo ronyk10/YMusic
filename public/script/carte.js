@@ -13,14 +13,14 @@ const player = {
     height: gridSize - 2
 };
 
-const boxNames = ["rap", "rapus", "pop", "drill", "electro", "douceur","rock"];
+const boxNames = ["RAP FR", "RAP US", "POP", "DRILL", "ELECTRO", "DOUCEUR", "ROCK"];
 
 const boxes = generateRandomBoxPositions(7);
 
 // Chargez l'image pour toutes les boîtes une seule fois
 function loadBoxImage() {
     boxImage = new Image();
-    boxImage.src = '/images/jukebox.png'; 
+    boxImage.src = '/images/jukebox.png';
     boxImage.onload = function () {
         startGame();
     };
@@ -50,8 +50,8 @@ function drawPlayer() {
     playerImage.src = '/images/character.png';
 
     // Dessiner l'image du joueur à la position x, y
-    playerImage.onload = function() {
-    ctx.drawImage(playerImage, player.x * (gridSize / 5), player.y * (gridSize / 5), player.width, player.height);
+    playerImage.onload = function () {
+        ctx.drawImage(playerImage, player.x * (gridSize / 5), player.y * (gridSize / 5), player.width, player.height);
     }
 }
 
@@ -59,8 +59,10 @@ function drawPlayer() {
 // boxX = Math.random() * (700 - 100) + 100;
 // boxY = box.y * (400 / 100) + 100;
 
+// link.setAttribute('href', 'https://fonts.googleapis.com/css2?family=Audiowide&family=Roboto:wght@300&display=swap');
+
 function drawBoxes() {
-    ctx.font = '15px Autowide';
+    ctx.font = '15px Audiowide';
     ctx.textAlign = 'center';
     ctx.fillStyle = 'white';
 
@@ -85,28 +87,27 @@ function checkAndOpenPopup() {
     for (const box of boxes) {
         if (player.x === box.x && player.y === box.y) {
             switch (box.name) {
-                case 'rap':
-                    window.location.href = '/game';
+                case 'RAP FR':
+                    window.location.href = '/rap-fr';
                     break;
-                case 'rapus':
-                    window.location.href = '/rapus';
+                case 'RAP US':
+                    window.location.href = '/rap-us';
                     break;
-                case 'drill':
+                case 'DRILL':
                     window.location.href = '/drill';
                     break;
-                case 'electro':
-                        window.location.href = '/electro';
+                case 'ELECTRO':
+                    window.location.href = '/electro';
                     break;
-                case 'douceur':
+                case 'DOUCEUR':
                     window.location.href = '/douceur';
                     break;
-                case 'pop':
+                case 'POP':
                     window.location.href = '/pop';
                     break;
-                case 'rock':
+                case 'ROCK':
                     window.location.href = '/rock';
                     break;
-                
             }
         }
     }
@@ -133,7 +134,7 @@ window.addEventListener('keydown', function (event) {
 
     if (prevX !== player.x || prevY !== player.y) {
         console.log(`Position du joueur - X: ${player.x}, Y: ${player.y}`);
-        checkAndOpenPopup(); 
+        checkAndOpenPopup();
     }
 
     update();

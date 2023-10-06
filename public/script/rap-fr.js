@@ -1,5 +1,5 @@
 var audioElement = new Audio();
-var rapSounds = ["Die.mp3", "nouvelles.mp3", "Marseille City.mp3", "Ca fait du bien.mp3"];
+var rapSounds = ["A7.mp3", "BOLIDE ALLEMAND.mp3", "DEMAIN.mp3", "Piano sombre.mp3","RR 9.1.mp3"];
 var currentSongTitle = rapSounds[Math.floor(Math.random() * rapSounds.length)].replace(".mp3", "");
 var currentLife = 5;
 var penduArray = [];
@@ -7,7 +7,7 @@ var testedLetters = []; // Ajoutez un tableau pour stocker les lettres testées
 let submit = document.getElementById("userInputcheck");
 
 function playRandomSoundRap() {
-    var soundFile = "/rap/" + currentSongTitle + ".mp3";
+    var soundFile = "/audio/rap-fr/" + currentSongTitle + ".mp3";
     console.log(soundFile);
     audioElement.src = soundFile;
     audioElement.play();
@@ -31,6 +31,7 @@ function compareInput() {
         return; // Sortez de la fonction si la lettre a déjà été testée
     }else if(checkword(userInput)){
         //alert("gagné") 
+        audioElement.pause();
         openPopupWin(); 
         // checkAndOpenPopup();
        
@@ -113,11 +114,13 @@ let popupLoser = document.getElementById("popup-loser");
 // Function to open the popup winner
 function openPopupWin(){
     popupWin.style.display = "block";
+    audioElement.pause();
 }
 
 // Function to open the popup loser
 function openPopupLoser(){
     popupLoser.style.display = "block";
+    audioElement.pause();
 }
 
 // Function to close the popups
@@ -125,6 +128,7 @@ function closePopupFunc() {
     popupWin.style.display = 'none';
     popupLoser.style.display = 'none';
     document.body.style.overflow = '';
+    audioElement.pause();
 }
 
 let closePopup = document.getElementById('cross-close-popup');

@@ -17,12 +17,12 @@ app.get('/carte', (req, res) => {
     res.sendFile(__dirname + '/public/template/carte.html');
 });
 
-app.get('/game', (req, res) => {
+app.get('/rap-fr', (req, res) => {
 
-    res.sendFile(__dirname + '/public/template/game.html');
+    res.sendFile(__dirname + '/public/template/rap-fr.html');
 });
 
-app.get('/rapus', (req, res) => {
+app.get('/rap-us', (req, res) => {
 
     res.sendFile(__dirname + '/public/template/rap-us.html');
 });
@@ -46,9 +46,15 @@ app.get('/douceur', (req, res) => {
 
     res.sendFile(__dirname + '/public/template/douceur.html');
 });
+
 app.get('/pop', (req, res) => {
 
     res.sendFile(__dirname + '/public/template/pop.html');
+});
+
+app.get('/credits', (req, res) => {
+
+    res.sendFile(__dirname + '/public/template/credits.html');
 });
 
 
