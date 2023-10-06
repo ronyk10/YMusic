@@ -101,9 +101,7 @@ function create ()
     platforms.create(200, 375, 'platform').setScale(0.5).refreshBody();
     platforms.create(500, 325, 'platform').setScale(0.5).refreshBody();
     platforms.create(300, 275, 'platform').setScale(0.5).refreshBody();
-    platforms.create(400, 225, 'platform').setScale(0.5).refreshBody();
-
-    // Crée un groupe pour les boîtes (boxes)
+    
     boxes = this.physics.add.group({
         key: 'boxes',
         repeat: 7,
