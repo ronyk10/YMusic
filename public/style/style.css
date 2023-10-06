@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Roboto:wght@300&display=swap');
+
+/* Réinitialisation des marges et des rembourrages pour le corps et le conteneur */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    background-image: url('/images/homepage-background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* Si vous souhaitez que l'image reste fixe pendant le défilement */
+    background-position: center;
+    /* Centrez l'image de fond */
+    font-family: 'Audiowide', 'Roboto', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100%; */
+    width: 100%;
+}
+
+.logo {
+    margin-top: 1rem;
+    width: 30%;
+    height: 30%;
+    /* margin-bottom: 20rem; */
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 5rem;
+}
+
+.play-button{
+    width: 200px;
+    font-family: 'Audiowide', 'Roboto', sans-serif;
+    height: 50px;
+    background: black;
+    border-radius: 15px;
+    cursor: pointer;
+    color: white;
+    display: flex;
+    /* Ajout de display:flex pour centrer le texte */
+    justify-content: center;
+    /* Centrer horizontalement */
+    align-items: center;
+    /* Centrer verticalement */
+}
+.btn2 {
+    width: 200px;
+    height: 50px;
+    background: black;
+    border-radius: 15px;
+    cursor: pointer;
+    color: white;
+    display: flex;
+    /* Ajout de display:flex pour centrer le texte */
+    justify-content: center;
+    /* Centrer horizontalement */
+    align-items: center;
+    /* Centrer verticalement */
+}
+
+.btn2 {
+    margin-top: 2rem;
+}
+
+.settings-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 2rem;
+    margin-right: 2rem;
+}
+
+.reduce-settings {
+    width: 5%;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity .4s;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup {
+    width: 200px;
+    height: 400px;
+    background: white;
+    border-radius: 15px;
+    margin: 6rem auto;
+    padding: 2rem;
+    border-radius: 15px;
+    width: 28%;
+    position: relative;
+    /* transition: all 0.4s ease-in-out; */
+}
+
+.popup .cross {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s ease;
+    color: #333;
+}

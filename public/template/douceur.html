@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/style/game.css">
+    <title>Ymusic</title>
+</head>
+
+<body>
+    <div class="main">
+        <!--------------------------------------------------------- T O P -------------------------------------------------->
+        <div class="top-page-game">
+            <a href="/carte">
+                <img src="/images/logo-Ymusic.png" alt="logo" class="ymusic">
+            </a>
+            <div class="container-life">
+                <div class="life">
+                    L I F E &nbsp;
+                </div>
+                    <div class="vinyle-life">
+                        <!-- <div id="currentLife">5</div> -->
+
+                        <img src="/images/vinyle-life.png" alt="vinyle" class="vinyle" id="vinyle1">&nbsp;
+                        <img src="/images/vinyle-life.png" alt="vinyle" class="vinyle" id="vinyle2">&nbsp;
+                        <img src="/images/vinyle-life.png" alt="vinyle" class="vinyle" id="vinyle3">&nbsp;
+                        <img src="/images/vinyle-life.png" alt="vinyle" class="vinyle" id="vinyle4">&nbsp;
+                        <img src="/images/vinyle-life.png" alt="vinyle" class="vinyle" id="vinyle5">
+                    </div>
+            </div>
+        </div>
+        <br>
+        <div class="advice">
+            &nbsp; &nbsp; advice : put on the sound ! &nbsp; <img src="/images/sound.png" alt="sound" class="sound">
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <!--------------------------------------------------------- E N D - T O P -------------------------------------------------->
+
+        <!--------------------------------------------------------- M I D D L E -------------------------------------------------->
+        <div class="middle-page-game">
+            <div class="character">
+                <img src="/images/character.png" alt="character" class="character-image">&nbsp; &nbsp; &nbsp;
+            </div>
+            <div class="all-the-game">
+                
+                <div class="instructions-guessing">
+                    Try to guess the title 
+                </div>
+                <br>
+                <div class="attempts-left" id="lives">
+                    You have &nbsp;<span id="currentLife">5</span>&nbsp; attempts left
+                </div>
+                <br>
+                <button id="playRandomRap">PLAY A SONG</button>
+                <br>
+                <div id="currentSongTitle"></div>
+                <br>
+                <div class="input-guessing">
+                    <input type="text" id="userInput" placeholder="LET'S GUESSING ! ">&nbsp;
+                    <!-- <img src="/public/images/vinyl.png" class="vinyle-guessing"> -->
+                    <button id="userInputcheck">SUBMIT</button>
+                </div>
+            </div>
+            <br>
+        </div> 
+        <br>
+        <br>
+        <!--------------------------------------------------------- E N D - M I D D L E -------------------------------------------------->
+
+        <!--------------------------------------------------------- B O T T O M -------------------------------------------------->
+        <div id="letters-guessed">
+            &nbsp; &nbsp; Tested letters : &nbsp;<span id="testedLetters"></span>
+        </div>
+        
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="bottom-page-game">
+            <div class="left-part">
+                <a href="/carte">
+                &nbsp; &nbsp; <img src="/images/return.png" alt="return" class="return">
+                &nbsp; Go back to the menu</a>
+            </div>
+            <div class="right-part">
+                <img src="/images/jukebox.png" alt="jukebox" class="jukebox">
+            </div>
+        </div>
+        <!--------------------------------------------------------- E N D - B O T T O M -------------------------------------------------->
+     <!--------------------------------------------------------- P O P U P  W I N -------------------------------------------------->
+     <div class="popup-container" id="popup-winner">
+        <div class="popup" id="popup">
+            <a href="#" class="cross" onclick="closePopupFunc()" id="cross-close-popup">&times;</a>
+            <p id="sizeUp">
+                W I N N E R !!!<br>
+            </p>
+            <p>
+                please click on the controller to continue.
+            </p>
+            <div class="img-container">
+                <img src="/images/controller-win.png" alt="">
+            </div>
+        </div>
+    </div>
+    <!--------------------------------------------------------- E N D - P O P U P  W I N -------------------------------------------------->
+    <!--------------------------------------------------------- P O P U P  G A M E  O V E R -------------------------------------------------->
+    <div class="popup-container" id="popup-loser">
+        <div class="popup" id="popup">
+            <a href="#" class="cross" onclick="closePopupFunc()">&times;</a>
+            <p id="sizeUp">
+                You are a L O S E R !!!<br>
+            </p>
+            <p>
+                please click on the controller to go back in the menu.
+            </p>
+            <div class="img-container">
+                <a href="/carte">
+                    <img src="/images/game-over-controller.png" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+    <!--------------------------------------------------------- E N D - P O P U P  G A M E  O V E R -------------------------------------------------->
+    </div>
+    <!-- <script src="/public/script/game.js"></script> -->
+    <script src="/script/douceur.js"></script>
+
+</body>
+
+</html>

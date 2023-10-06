@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/style.css">
+    <link rel="shortcut icon" href="/images/logo-webv.png" type="image/x-icon">
+    <title>YMusic - Homepage</title>
+</head>
+
+<body>
+    <audio autoplay>
+        <source src="/audio/audio_tetris.mp3" type="audio/mpeg">
+        Votre navigateur ne supporte pas la lecture de fichiers audio.
+    </audio>
+
+    <div class="settings-container">
+        <img src="/images/paramètres.png" class="reduce-settings">
+    </div>
+    <div class="logo-container">
+        <img src="/images/ymusic-logo-blanc.png" alt="logo" class="logo">
+    </div>
+
+    <div class="btn-container">
+
+        <!-- <form action="/carte" method="get"> -->
+            <a href="/carte">
+                <div class="play-button" id="playRandomRap">PLAY</div>
+            </a>
+        <!-- </form> -->
+
+        <a class="btn2" onclick="location.href='#popup';">RULES</a>
+        <a href="/credits" class="btn2">CREDITS</a>
+
+        <div id="popup" class="overlay">
+            <div class="popup">
+                <h2>Rules</h2>
+                <a href="#" class="cross">&times;</a>
+                <p>
+                    Welcome to YMusic ! The game that will test your musical knowledge! <br>
+
+                    <br> You will play the role of a music fan who will compete in the fabulous YMusic blind test. <br>
+
+                    <br>All in the form of a hangman game <br>
+
+                    <br>The rules are simple : <br>
+
+                    <br>-Find based on level, music name, artist or music genre.<br>
+                    -After 5 mistakes, it's game over!<br>
+
+                    <br> Enjoy !!
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

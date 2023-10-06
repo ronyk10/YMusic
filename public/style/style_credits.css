@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Roboto:wght@300&display=swap');
+
+/* Réinitialisation des marges et des rembourrages pour le corps et le conteneur */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    background-image: url('/images/homepage-background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* Si vous souhaitez que l'image reste fixe pendant le défilement */
+    background-position: center;
+    /* Centrez l'image de fond */
+    font-family: 'Audiowide', 'Roboto', sans-serif;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-top: 0;
+    font-weight: normal;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 100%;
+}
+
+.logo-container img {
+    width: 30%;
+    height: 30%;
+    margin-left: 1.5rem;
+}
+
+
+
+.title-container {
+    display: flex;
+    align-items: center;
+}
+
+.text-container {
+    text-align: center;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+}
+
+.card-container-1,
+.card-container-2 {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-bottom: -5rem;
+}
+
+
+
+.box1,
+.box2,
+.box3,
+.box4,
+.box5,
+.box6,
+.box7 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 1rem;
+    border: 1px solid none;
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+.box1 img,
+.box2 img,
+.box3 img,
+.box4 img,
+.box5 img,
+.box6 img {
+    width: 300px;
+    height: 300px;
+
+}
+
+.btn2 {
+    width: 200px;
+    height: 50px;
+    background: black;
+    border-radius: 15px;
+    cursor: pointer;
+    color: white;
+    display: flex;
+    /* Ajout de display:flex pour centrer le texte */
+    justify-content: center;
+    /* Centrer horizontalement */
+    align-items: center;
+    /* Centrer verticalement */
+}
+
+.btn2 {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
