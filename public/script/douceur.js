@@ -7,7 +7,7 @@ var testedLetters = []; // Ajoutez un tableau pour stocker les lettres testées
 
 function playRandomSoundRap() {
     var soundFile = "/audio/douceur/" + currentSongTitle + ".mp3";
-    console.log(soundFile);
+    // console.log(soundFile);
     audioElement.src = soundFile;
     audioElement.play();
 
@@ -23,19 +23,19 @@ function compareInput() {
 
     // Vérifiez si la lettre a déjà été testée
     if (testedLetters.includes(userInput)) {
-        console.log("Lettre déjà testée : " + userInput);
+        // console.log("Lettre déjà testée : " + userInput);
         document.getElementById("userInput").value = "";
         return; // Sortez de la fonction si la lettre a déjà été testée
     }else if(checkword(userInput)){
         audioElement.pause();
        openPopupWin();
     }
-    console.log(currentSongTitle , userInput)
+    // console.log(currentSongTitle , userInput)
     testedLetters.push(userInput); // Ajoutez la lettre testée au tableau
 
     for (let i = 0; i < currentSongTitle.length; i++) {
         if (userInput === currentSongTitle[i].toLowerCase()) {
-            console.log("L'entrée de l'utilisateur correspond à la lettre " + userInput);
+            // console.log("L'entrée de l'utilisateur correspond à la lettre " + userInput);
             penduArray[i] = currentSongTitle[i];
             matchFound = true;
         }
@@ -45,7 +45,10 @@ function compareInput() {
     if (!matchFound) {
         currentLife--; 
         updateLifeElement();
-        console.log("L'entrée de l'utilisateur ne correspond à aucune lettre du titre de la chanson");
+        if (currentLife == 0) {
+            openPopupLoser();
+        }
+        // console.log("L'entrée de l'utilisateur ne correspond à aucune lettre du titre de la chanson");
     }
 
     updateCurrentSongTitleElement();
@@ -53,15 +56,15 @@ function compareInput() {
 
     // Vérification de la fin du jeu
     if (penduArray.indexOf("_") === -1) {
-        console.log("Félicitations, vous avez deviné le titre de la chanson !");
+        // console.log("Félicitations, vous avez deviné le titre de la chanson !");
         audioElement.pause();
         openPopupWin();
     
     }
 
     // Vérifiez si le joueur a perdu (plus de vies)
-    if (currentLife <= 0) {
-        console.log("Vous avez perdu, le titre de la chanson était : " + currentSongTitle);
+    if (currentLife == 0) {
+        // console.log("Vous avez perdu, le titre de la chanson était : " + currentSongTitle);
         audioElement.pause();
         openPopupLoser();
 
@@ -99,7 +102,7 @@ function updateLifeElement() {
         }
 }
 
-//-----------------------------FUNCTION FOR THE POPUP-----------------------------
+//-----------------------------FUNCTIONS FOR THE POPUPS-----------------------------
 
 //déclaration de variables
 let popupWin = document.getElementById("popup-winner");

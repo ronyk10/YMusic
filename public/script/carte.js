@@ -3,8 +3,8 @@ const ctx = canvas.getContext('2d');
 let boxImage; // Une seule image pour toutes les boîtes
 
 const gridSize = 55;
-const gridWidth = canvas.width / (gridSize / 4);
-const gridHeight = canvas.height / (gridSize / 4);
+const gridWidth = Math.floor(canvas.width / gridSize); // Correction
+const gridHeight = Math.floor(canvas.height / gridSize); // Correction
 
 const player = {
     x: 2,
@@ -13,7 +13,7 @@ const player = {
     height: gridSize - 2
 };
 
-const boxNames = ["RAP FR", "RAP US", "POP", "DRILL", "ELECTRO", "DOUCEUR", "ROCK"];
+const boxNames = ["RAP-FR", "RAP-US", "POP", "DRILL", "ELECTRO", "DOUCEUR", "ROCK"];
 
 const boxes = generateRandomBoxPositions(7);
 
@@ -21,9 +21,7 @@ const boxes = generateRandomBoxPositions(7);
 function loadBoxImage() {
     boxImage = new Image();
     boxImage.src = '/images/jukebox.png';
-    boxImage.onload = function () {
-        startGame();
-    };
+    boxImage.onload = startGame; // Correction
 }
 
 function generateRandomBoxPositions(count) {
@@ -31,9 +29,14 @@ function generateRandomBoxPositions(count) {
     for (let i = 0; i < count; i++) {
         let randomX, randomY;
         do {
-            randomX = Math.floor(Math.random() * (gridWidth - 2)) + 1;
-            randomY = Math.floor(Math.random() * (gridHeight - 2)) + 1;
-        } while (positions.some(box => box.x === randomX && box.y === randomY));
+            randomX = Math.floor(Math.random() * gridWidth); // Correction
+            randomY = Math.floor(Math.random() * gridHeight); // Correction
+        } while (
+            positions.some(box => (box.x === randomX && box.y === randomY) || // Vérification de superposition
+                randomX === player.x && randomY === player.y) || // Vérification que la boîte ne se superpose pas au joueur
+            (randomX === 0 || randomX === gridWidth - 1 || // Vérification des limites du cadre
+                randomY === 0 || randomY === gridHeight - 1)
+        );
 
         // Ajoutez le nom à chaque boîte
         positions.push({
@@ -51,15 +54,9 @@ function drawPlayer() {
 
     // Dessiner l'image du joueur à la position x, y
     playerImage.onload = function () {
-        ctx.drawImage(playerImage, player.x * (gridSize / 5), player.y * (gridSize / 5), player.width, player.height);
-    }
+        ctx.drawImage(playerImage, player.x * gridSize, player.y * gridSize, player.width, player.height);
+    };
 }
-
-
-// boxX = Math.random() * (700 - 100) + 100;
-// boxY = box.y * (400 / 100) + 100;
-
-// link.setAttribute('href', 'https://fonts.googleapis.com/css2?family=Audiowide&family=Roboto:wght@300&display=swap');
 
 function drawBoxes() {
     ctx.font = '15px Audiowide';
@@ -67,9 +64,8 @@ function drawBoxes() {
     ctx.fillStyle = 'white';
 
     for (const box of boxes) {
-        console.log(player.x, box.x)
-        const boxX = box.x * (gridSize / 5);
-        const boxY = box.y * (gridSize / 5);
+        const boxX = box.x * gridSize;
+        const boxY = box.y * gridSize;
 
         ctx.drawImage(boxImage, boxX, boxY, gridSize, gridSize);
         ctx.fillText(box.name, boxX + gridSize / 2, boxY + gridSize + 15);
@@ -86,29 +82,8 @@ function update() {
 function checkAndOpenPopup() {
     for (const box of boxes) {
         if (player.x === box.x && player.y === box.y) {
-            switch (box.name) {
-                case 'RAP FR':
-                    window.location.href = '/rap-fr';
-                    break;
-                case 'RAP US':
-                    window.location.href = '/rap-us';
-                    break;
-                case 'DRILL':
-                    window.location.href = '/drill';
-                    break;
-                case 'ELECTRO':
-                    window.location.href = '/electro';
-                    break;
-                case 'DOUCEUR':
-                    window.location.href = '/douceur';
-                    break;
-                case 'POP':
-                    window.location.href = '/pop';
-                    break;
-                case 'ROCK':
-                    window.location.href = '/rock';
-                    break;
-            }
+            window.location.href = `/${box.name.toLowerCase()}`; // Utilisez le nom de la boîte pour construire l'URL
+            return;
         }
     }
 }
@@ -133,7 +108,6 @@ window.addEventListener('keydown', function (event) {
     }
 
     if (prevX !== player.x || prevY !== player.y) {
-        console.log(`Position du joueur - X: ${player.x}, Y: ${player.y}`);
         checkAndOpenPopup();
     }
 
@@ -141,8 +115,56 @@ window.addEventListener('keydown', function (event) {
     event.preventDefault();
 });
 
-
 function startGame() {
     update();
 }
+
+let controls = {
+    "Forwards": [38, "ArrowUp"],
+    "Backwards": [40, "ArrowDown"],
+    "Left": [37, "ArrowLeft"],
+    "Right": [39, "ArrowRight"]
+};
+
+document.getElementById("Forwards").children[1].onclick = () => { changeControls("Forwards") };
+document.getElementById("Backwards").children[1].onclick = () => { changeControls("Backwards") };
+document.getElementById("Left").children[1].onclick = () => { changeControls("Left") };
+document.getElementById("Right").children[1].onclick = () => { changeControls("Right") };
+
+function changeControls(str) {
+    let touch = document.getElementById(str);
+    touch.children[1].innerHTML = "Press new control";
+    document.removeEventListener('keydown', handleKeyDown, true);
+
+    function handleKeyDown(event) {
+        document.addEventListener('keydown', handleKeyDown, true);
+        console.log(event.key);
+        controls[str][0] = event.keyCode;
+        controls[str][1] = event.key;
+        touch.children[0].innerHTML = "Walk " + str + " : " + controls[str][1];
+        touch.children[1].innerHTML = "Change";
+        document.removeEventListener("keydown", handleKeyDown, true);
+        
+    }
+
+    document.addEventListener("keydown", handleKeyDown, true);
+}
+
+
+let avatarImage = document.querySelector('.avatar'); //Récupération du personnage
+let currentImage = '/images/character.png'; // Personnage de base
+let alternateImage1 = '/images/character2d.png'; // Personnage 2
+let alternateImage2 = '/images/monkey-character.png'; // Personnage 3
+let alternateImage3 = '/images/character.png'; // Personnage 4
+
+let currentAlternateIndex = 0;
+const alternateImages = [alternateImage1, alternateImage2, alternateImage3];
+
+function changeAvatar() {
+    currentAlternateIndex = (currentAlternateIndex + 1) % alternateImages.length;
+    const newImage = alternateImages[currentAlternateIndex];
+    avatarImage.src = newImage;
+}
+
 loadBoxImage();
+

@@ -83,6 +83,7 @@ a {
     align-items: center;
     margin-top: 2rem;
     margin-right: 2rem;
+    cursor: pointer;
 }
 
 .reduce-settings {
@@ -128,4 +129,18 @@ a {
     text-decoration: none;
     transition: 0.3s ease;
     color: #333;
+}
+
+p {
+    font-family: 'Audiowide', 'Roboto', sans-serif;
+    
+}
+
+button{
+    font-family: 'Audiowide', 'Roboto', sans-serif;
+    background-color: rgba(255, 255, 255, 0.325);
+    color: black;
+    border-radius: 50px;
+    cursor: pointer;
+
 }

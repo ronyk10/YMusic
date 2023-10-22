@@ -1,12 +1,17 @@
-/* body {
+body,
+html {
     margin: 0;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100vw;
-} */
+    padding: 0;
+    background-image: url('/images/background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
 
 .game-board{
     margin: 0;
@@ -21,7 +26,7 @@
 .top-page-game{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .container-life{
@@ -32,11 +37,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 33.3%;
 }
 
 .ymusic{
-    height: 120px;
+    height: 80px;
     width: 300px;
+    margin-right: 260px;
 }
 
 .life{
@@ -48,11 +55,98 @@
     width: 30px;
 }
 
-/* #gameCanvas {
-    width: 800px;
-    height: 500px;
-} */
+.settings-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 2rem;
+    margin-right: 2rem;
+    cursor: pointer;
+}
 
-/* canvas {
-    border: 1px solid black;
-} */
+.reduce-settings {
+    width: 80px;
+    margin-left: 243px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity .4s;
+    visibility: hidden;
+    opacity: 0;
+    font-family: 'Audiowide', 'Roboto', sans-serif;
+}
+
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup {
+    width: 700px;
+    height: 500px;
+    background: white;
+    border-radius: 15px;
+    margin: 6rem auto;
+    padding: 2rem;
+    border-radius: 15px;
+    position: relative;
+    display: flex;
+    /* transition: all 0.4s ease-in-out; */
+}
+
+.popup .cross {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s ease;
+    color: #333;
+}
+
+p {
+    font-family: 'Audiowide', 'Roboto', sans-serif;
+    
+}
+
+button{
+    font-family: 'Audiowide', 'Roboto', sans-serif;
+    background-color: rgba(255, 255, 255, 0.325);
+    color: black;
+    border-radius: 50px;
+    cursor: pointer;
+
+}
+.title-settings{
+    font-family: 'audiowide';
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 10%;
+}
+
+.container-popup-settings{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 100px;
+}
+
+.left-part-settings{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.right-part-settings{
+    display: flex;
+    flex-direction: column;
+}
