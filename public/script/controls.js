@@ -28,7 +28,6 @@
 
 //     document.addEventListener("keydown", handleKeyDown, true);
 // }
-
 let controls = {
     "Forwards": [38, "ArrowUp"],
     "Backwards": [40, "ArrowDown"],
@@ -54,7 +53,7 @@ function changeControls(str) {
         touch.children[0].innerHTML = "Walk " + str + " : " + controls[str][1];
         touch.children[1].innerHTML = "Change";
         document.removeEventListener("keydown", handleKeyDown, true);
-        // Sauvegarde des contrôles dans le localStorage
+         ////////////////////SAUVEGARDE DES TOUCHES/////////////////
         localStorage.setItem('controls', JSON.stringify(controls));
     }
 
