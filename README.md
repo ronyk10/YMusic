@@ -1,5 +1,5 @@
 
-# ![Ymusic Logo](logo-readme.png)
+# ![Ymusic Logo](readme.png)
 
 
 Ymusic is a game that we have to develop for a school project around a theme which is the musci.  
@@ -56,5 +56,4 @@ When the game as started you have 5 attempts to find the name of the artist, eit
 - [@emma](https://www.github.com/pcrdemma)
 - [@rony](https://www.github.com/ronyk10)
 - [@baptiste](https://www.github.com/bapetisteuh)
-- [@thanhmy](https://www.github.com/thanhmy69)
 
