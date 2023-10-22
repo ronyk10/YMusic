@@ -1,6 +1,6 @@
 
 # Ymusic
-![Ymusic Logo](/images/logo-Ymusic.png)
+![Ymusic Logo](logo-Ymusic copy.png)
 
 Ymusic is a game that we have to develop for a school project around a theme which is the musci.  
 Ymusic is an engaging web game that combines a music blind test with the game of Hangman
