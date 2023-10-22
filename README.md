@@ -38,15 +38,15 @@ The application should now be accessible at `http://localhost:8081`.
 
 ## How to play    
 
-    First of all, on the first page you can see the rules, and also the members who created this game.  
-    Click on play to start the game.  
+First of all, on the first page you can see the rules, and also the members who created this game.  
+Click on play to start the game.  
 
-    You will arrived on the game board, you can direct the character to a jukebox.   
-    Each jukeboxes represents a type of music.  
+You will arrived on the game board, you can direct the character to a jukebox.   
+Each jukeboxes represents a type of music.  
 
-    The blind test will be in function of the type of jukebox choice.  
+The blind test will be in function of the type of jukebox choice.  
 
-    When the game as started you have 5 attempts to find the name of the artist, either the title, or both in function of the level you are. 
+When the game as started you have 5 attempts to find the name of the artist, either the title, or both in function of the level you are. 
 
 
 
