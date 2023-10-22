@@ -96,7 +96,6 @@ a{
     padding: 2rem;
     border-radius: 15px;
     position: relative;
-    display: flex;
     /* transition: all 0.4s ease-in-out; */
 }
 
@@ -135,9 +134,9 @@ button{
 
 .container-popup-settings{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 100%;
-    margin-top: 100px;
+    margin-top: 50px;
 }
 
 .left-part-settings{

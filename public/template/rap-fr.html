@@ -93,6 +93,10 @@
         <!--------------------------------------------------------- E N D - B O T T O M -------------------------------------------------->
         <!--------------------------------------------------------- P O P U P  W I N -------------------------------------------------->
         <div class="popup-container" id="popup-winner">
+            <audio id="winner">
+                <source src="/audio/winner.mp3" type="audio/mpeg">
+                Votre navigateur ne supporte pas la lecture de fichiers audio.
+            </audio>
             <div class="popup" id="popup">
                 <a href="#" class="cross" onclick="closePopupFunc()" id="cross-close-popup">&times;</a>
                 <p id="sizeUp">
@@ -102,13 +106,19 @@
                     please click on the controller to continue.
                 </p>
                 <div class="img-container">
-                    <img src="/images/controller-win.png" alt="">
+                    <a href="/carte">
+                        <img src="/images/controller-win.png" alt="">
+                    </a>
                 </div>
             </div>
         </div>
         <!--------------------------------------------------------- E N D - P O P U P  W I N -------------------------------------------------->
         <!--------------------------------------------------------- P O P U P  G A M E  O V E R -------------------------------------------------->
         <div class="popup-container" id="popup-loser">
+            <audio id="loser">
+                <source src="/audio/game-over.mp3" type="audio/mpeg">
+                Votre navigateur ne supporte pas la lecture de fichiers audio.
+            </audio>
             <div class="popup" id="popup">
                 <a href="#" class="cross" onclick="closePopupFunc()">&times;</a>
                 <p id="sizeUp">

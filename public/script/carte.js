@@ -119,6 +119,8 @@ function startGame() {
     update();
 }
 
+loadBoxImage();
+
 let controls = {
     "Forwards": [38, "ArrowUp"],
     "Backwards": [40, "ArrowDown"],
@@ -165,6 +167,4 @@ function changeAvatar() {
     const newImage = alternateImages[currentAlternateIndex];
     avatarImage.src = newImage;
 }
-
-loadBoxImage();
 

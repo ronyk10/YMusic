@@ -26,6 +26,7 @@ a {
     align-items: center;
     /* height: 100%; */
     width: 100%;
+    margin-top: 123px;
 }
 
 .logo {
@@ -75,19 +76,6 @@ a {
 
 .btn2 {
     margin-top: 2rem;
-}
-
-.settings-container {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin-top: 2rem;
-    margin-right: 2rem;
-    cursor: pointer;
-}
-
-.reduce-settings {
-    width: 5%;
 }
 
 .overlay {

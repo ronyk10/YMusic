@@ -114,13 +114,15 @@ let popupLoser = document.getElementById("popup-loser");
 // Function to open the popup winner
 function openPopupWin(){
     popupWin.style.display = "block";
-    audioElement.pause();
+    let popupSound = document.getElementById("winner");
+    popupSound.play();
 }
 
 // Function to open the popup loser
 function openPopupLoser(){
     popupLoser.style.display = "block";
-    audioElement.pause();
+    let popupSound = document.getElementById("loser");
+    popupSound.play();
 }
 
 // Function to close the popups
